@@ -19,7 +19,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
 
 --- a/include/linux/netdevice.h
 +++ b/include/linux/netdevice.h
-@@ -1694,6 +1694,7 @@ enum netdev_priv_flags {
+@@ -1701,6 +1701,7 @@ enum netdev_priv_flags {
  	IFF_LIVE_RENAME_OK		= 1<<30,
  	IFF_TX_SKB_NO_LINEAR		= BIT_ULL(31),
  	IFF_CHANGE_PROTO_DOWN		= BIT_ULL(32),
@@ -27,7 +27,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
  };
  
  #define IFF_802_1Q_VLAN			IFF_802_1Q_VLAN
-@@ -1728,6 +1729,7 @@ enum netdev_priv_flags {
+@@ -1735,6 +1736,7 @@ enum netdev_priv_flags {
  #define IFF_L3MDEV_RX_HANDLER		IFF_L3MDEV_RX_HANDLER
  #define IFF_LIVE_RENAME_OK		IFF_LIVE_RENAME_OK
  #define IFF_TX_SKB_NO_LINEAR		IFF_TX_SKB_NO_LINEAR
@@ -35,7 +35,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
  
  /* Specifies the type of the struct net_device::ml_priv pointer */
  enum netdev_ml_priv_type {
-@@ -2096,6 +2098,11 @@ struct net_device {
+@@ -2103,6 +2105,11 @@ struct net_device {
  	const struct tlsdev_ops *tlsdev_ops;
  #endif
  
@@ -47,7 +47,7 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
  	const struct header_ops *header_ops;
  
  	unsigned char		operstate;
-@@ -2171,6 +2178,10 @@ struct net_device {
+@@ -2178,6 +2185,10 @@ struct net_device {
  	struct mctp_dev __rcu	*mctp_ptr;
  #endif
  
