@@ -1,8 +1,6 @@
-diff --git a/net/netfilter/xt_FLOWOFFLOAD.c b/net/netfilter/xt_FLOWOFFLOAD.c
-index 0c56c32fb..e8b5c9172 100644
 --- a/net/netfilter/xt_FLOWOFFLOAD.c
 +++ b/net/netfilter/xt_FLOWOFFLOAD.c
-@@ -518,8 +518,7 @@ flowoffload_tg(struct sk_buff *skb, const struct xt_action_param *par)
+@@ -518,8 +518,7 @@ flowoffload_tg(struct sk_buff *skb, cons
  	if (!flow)
  		goto err_flow_alloc;
  
