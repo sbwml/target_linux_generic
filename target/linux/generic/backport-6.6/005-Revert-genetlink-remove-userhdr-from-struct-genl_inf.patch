@@ -277,3 +277,16 @@ This reverts commit bffcc6882a1bb2be8c9420184966f4c2c822078e.
  
  	memset(&msg, 0, sizeof(msg));
  
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -7550,10 +7550,6 @@ int stmmac_dvr_probe(struct device *devi
+ 	if (priv->dma_cap.rssen && priv->plat->rss_en)
+ 		ndev->features |= NETIF_F_RXHASH;
+ 
+-	ndev->vlan_features |= ndev->features;
+-	/* TSO doesn't work on VLANs yet */
+-	ndev->vlan_features &= ~NETIF_F_TSO;
+-
+ 	/* MTU range: 46 - hw-specific max */
+ 	ndev->min_mtu = ETH_ZLEN - ETH_HLEN;
+ 	if (priv->plat->has_xgmac)
