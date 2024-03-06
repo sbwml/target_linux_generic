@@ -31,11 +31,11 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
  #define IFF_FAILOVER_SLAVE		IFF_FAILOVER_SLAVE
  #define IFF_L3MDEV_RX_HANDLER		IFF_L3MDEV_RX_HANDLER
  #define IFF_TX_SKB_NO_LINEAR		IFF_TX_SKB_NO_LINEAR
-+#define IFF_NO_IP_ALIGN		IFF_NO_IP_ALIGN
++#define IFF_NO_IP_ALIGN			IFF_NO_IP_ALIGN
  
  /* Specifies the type of the struct net_device::ml_priv pointer */
  enum netdev_ml_priv_type {
-@@ -2161,6 +2163,11 @@ struct net_device {
+@@ -2212,6 +2214,11 @@ struct net_device {
  	const struct tlsdev_ops *tlsdev_ops;
  #endif
  
@@ -44,10 +44,10 @@ Signed-off-by: Felix Fietkau <nbd@nbd.name>
 +	struct sk_buff *(*eth_mangle_tx)(struct net_device *dev, struct sk_buff *skb);
 +#endif
 +
- 	const struct header_ops *header_ops;
- 
  	unsigned char		operstate;
-@@ -2236,6 +2243,10 @@ struct net_device {
+ 	unsigned char		link_mode;
+ 
+@@ -2283,6 +2290,10 @@ struct net_device {
  	struct mctp_dev __rcu	*mctp_ptr;
  #endif
  
